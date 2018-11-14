@@ -14,11 +14,13 @@ int main(int argc, char const *argv[]) {
   if (fp == NULL){
       exit(EXIT_FAILURE);
   }
+  int lineNum = 1;
   int size = 0;
   while ((read = getline(&line, &len, fp)) != -1) {
       if (strstr(line , argv[1] )!= NULL)
       {
          printf("%d %s\n\n", lineNum, line);
+         size++;
       }
       lineNum++;
   }
